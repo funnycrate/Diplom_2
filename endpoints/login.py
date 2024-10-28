@@ -1,10 +1,12 @@
 import requests
+import allure
 from data import BASE_URL
 
 class LoginUser:
     def __init__(self):
         self.url = f"{BASE_URL}/auth/login"
 
+    @allure.step("Авторизация пользователя")
     def login(self, email, password):
         """Метод для авторизации пользователя"""
         data = {
